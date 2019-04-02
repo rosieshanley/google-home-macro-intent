@@ -1,22 +1,26 @@
 ### Setup Instructions
 
-1. First, you need to make sure you have python installed:
+##### Requirements:
+
+* *Python3* and *pip*
+* *npm*
+
+1. Install [flask](http://flask.pocoo.org):
 
 ```
-$ brew install python3
+$ pip install flask
 ```
 
-2. Then, you need to install pip:
-
-```
-$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-$ python get-pip.py
-```
-
-3. Finally, install requests:
+2. Install [requests](http://docs.python-requests.org/en/master/):
 
 ```
 $ pip install requests
+```
+
+3. Install [newman](https://learning.getpostman.com/docs/postman/collection_runs/command_line_integration_with_newman/):
+
+```
+$ npm install newman
 ```
 
 ### Running Instructions
@@ -38,4 +42,10 @@ $ flask run --host=0.0.0.0 --port=5000
 ```
 
 4. Refresh `http://localhost:3000/health`
+
+5. To run the [Postman](https://learning.getpostman.com/docs/postman/launching_postman/installation_and_updates/) tests, run:
+
+```
+$ newman run own_your_innocence.postman_collection.json
+```
 

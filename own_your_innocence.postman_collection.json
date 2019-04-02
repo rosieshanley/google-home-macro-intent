@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "296af224-0c3c-4bd7-ad7a-76ac9d2b368b",
+		"name": "own_your_innocence",
+		"description": "This collection contains examples of tests that you can use to automate your testing process.\n\n- Basic test syntax\n- API tests\n- Integration tests\n\n# Quick tips for writing tests\n- Organize your test scenarios by grouping your requests in [collections](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections) and [folders](https://www.getpostman.com/docs/v6/postman/collections/managing_collections#adding-folders), and naming them descriptively\n- Document your API’s requirements using [markdown in the descriptions](https://www.getpostman.com/docs/v6/postman/collections/using_markdown_for_descriptions)\n- Use [variables](https://www.getpostman.com/docs/v6/postman/environments_and_globals/variables) to simulate more sophisticated user flows\n- Common tests that will be run after every request can be added to collection-level tests or folder-level tests\n\n# Resources\nIf you're not already familiar with writing tests in Postman, check out these resources.\n* Postman docs: [Test scripts](https://www.getpostman.com/docs/v6/postman/scripts/test_scripts)\n* Postman docs: [Test examples](https://www.getpostman.com/docs/v6/postman/scripts/test_examples)\n* Community contribution: [Quick reference guide](https://community.getpostman.com/t/the-postman-cheatsheet-quick-reference-guide/1054)\n* Community contribution: [Examples and guides](https://github.com/DannyDainton/All-Things-Postman)\n* Postman blog: [Writing tests in Postman](http://blog.getpostman.com/2017/10/25/writing-tests-in-postman/)\n* Postman blog: [API testing tips from a Postman professional](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7fe7a173-1a36-43a1-bbe8-20e3cf555bc2",
+						"exec": [
+							"// Test that my_app is up",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test that my_app_dependency is up",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"My website is up and so is its dependency!\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				},
+				"description": "This test is to validate the response status code. This SNIPPET is also available on the right sidebar under `Status code: Code in 200`."
+			},
+			"response": [
+				{
+					"name": "Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/get?foo1=bar1&foo2=bar2",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "foo1",
+									"value": "bar1"
+								},
+								{
+									"key": "foo2",
+									"value": "bar2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 15 Nov 2018 22:21:20 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1cd-LkUKVugbVYQuMcTU7OTzmp77cMo\""
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Length",
+							"value": "348"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"args\": {\n        \"foo1\": \"bar1\",\n        \"foo2\": \"bar2\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"host\": \"postman-echo.com\",\n        \"accept\": \"*/*\",\n        \"accept-encoding\": \"gzip, deflate\",\n        \"cache-control\": \"no-cache\",\n        \"cookie\": \"sails.sid=s%3AK8csWt5VZ3Oalv85HiBtffDcrSOJ-RiP.V14RjjJqkOv8%2BLXuHRmZ9l50G8S6eU16yLU%2F3N%2F0dKU\",\n        \"postman-token\": \"c6b9bca5-7369-4da8-a539-6c906d1133f2\",\n        \"user-agent\": \"PostmanRuntime/7.3.0\",\n        \"x-forwarded-port\": \"443\"\n    },\n    \"url\": \"https://postman-echo.com/get?foo1=bar1&foo2=bar2\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "12da26a7-df4d-402b-8134-de23a7a40c58",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c2294604-fd81-4973-803f-222898bc38d5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

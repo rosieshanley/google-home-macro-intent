@@ -16,9 +16,9 @@ def health_check():
         requests.get('http://localhost:5000')
     except Exception:
         # will execute if my_app_dependency is down
-        return "My app is up but my dependency is down!"
+        return "My website is up, but its dependency is down!"
     # will execute if my_app_dependency is up
-    return "My app is up and so is my dependency!"
+    return "My website is up and so is its dependency!"
 
 if __name__ == "__main__":
     app.run()
