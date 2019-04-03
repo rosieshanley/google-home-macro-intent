@@ -1,0 +1,5 @@
+#!/bin/bash
+
+timestamp=$(date +"%s")
+
+newman run ~/code/innocence/own_your_innocence.postman_collection.json >> ~/code/innocence/logs/postman_$timestamp 2>&1

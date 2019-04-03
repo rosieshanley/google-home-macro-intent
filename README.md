@@ -49,3 +49,18 @@ $ flask run --host=0.0.0.0 --port=5000
 $ newman run own_your_innocence.postman_collection.json
 ```
 
+6. To run the Postman tests via [cron](https://cron-job.org/en/) job, run:
+
+```
+$ crontab -e
+```
+
+and write the following code to the file:
+
+```
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+* * * * * ~/code/innocence/bin/run_postman_tests
+```
+
+This job will run every minute and will print logs to the `logs` directory

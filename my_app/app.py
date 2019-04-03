@@ -2,14 +2,13 @@ from flask import Flask
 import requests
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/hello")
 def hello():
     return "Hello!"
 
 @app.route("/health")
 def health_check():
-    # curl my_app
-    requests.get('http://localhost:3000/')
+    # TO DO: check response time of hello route
 
     # curl my_app_dependency and rescue from error
     try:
