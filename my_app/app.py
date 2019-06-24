@@ -1,23 +1,22 @@
-from flask import Flask
+from flask import Flask, request
 import requests
 app = Flask(__name__)
 
-@app.route("/hello")
-def hello():
-    return "Hello!"
-
 @app.route("/health")
 def health_check():
-    # TO DO: check response time of hello route
+    return "My website is up!"
 
-    # curl my_app_dependency and rescue from error
-    try:
-        requests.get('http://localhost:5000')
-    except Exception:
-        # will execute if my_app_dependency is down
-        return "My website is up, but its dependency is down!"
-    # will execute if my_app_dependency is up
-    return "My website is up and so is its dependency!"
+@app.route("/action", methods=['GET', 'POST'])
+def action():
+    req = request.get_json()
+    if req is None:
+        return 'Nah'
+ 
+    print(req) 
+    print(req.get('queryResult').get('queryText'))
+    return 'HEY'
+
+ 
 
 if __name__ == "__main__":
     app.run()
