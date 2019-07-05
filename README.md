@@ -30,3 +30,5 @@ run `ngrok` to port your application to a public facing URL:
 ```
 $ ngrok http 3000
 ```
+
+In Dialogflow, update the Fulfillment Webhook URL to your `https://[your-ngrok-url]` for your intent.
