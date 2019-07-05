@@ -19,16 +19,16 @@ $ pip install requests
 
 ### Running Instructions
 
-`cd` into the my `my_app` directory and run:
+1. `cd` into the my `my_app` directory and run:
 
 ```
 $ flask run --host=0.0.0.0 --port=3000
 ```
 
-run `ngrok` to port your application to a public facing URL:
+2. run `ngrok` to port your application to a public facing URL:
 
 ```
 $ ngrok http 3000
 ```
 
-In Dialogflow, update the Fulfillment Webhook URL to your `https://[your-ngrok-url]` for your intent.
+3. In Dialogflow, update the Fulfillment Webhook URL to your `https://[your-ngrok-url]` for your intent.
