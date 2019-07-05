@@ -25,7 +25,7 @@ $ pip install requests
 $ flask run --host=0.0.0.0 --port=3000
 ```
 
-run ngrok to port your application to a public facing URL:
+run `ngrok` to port your application to a public facing URL:
 
 ```
 $ ngrok http 3000
